@@ -1,0 +1,16 @@
+E:\GitHub\TestDev-QWA\TestDev-QWA\bin\Debug\netcoreapp3.1\TestDev-QWA.exe
+E:\GitHub\TestDev-QWA\TestDev-QWA\bin\Debug\netcoreapp3.1\TestDev-QWA.deps.json
+E:\GitHub\TestDev-QWA\TestDev-QWA\bin\Debug\netcoreapp3.1\TestDev-QWA.runtimeconfig.json
+E:\GitHub\TestDev-QWA\TestDev-QWA\bin\Debug\netcoreapp3.1\TestDev-QWA.runtimeconfig.dev.json
+E:\GitHub\TestDev-QWA\TestDev-QWA\bin\Debug\netcoreapp3.1\TestDev-QWA.dll
+E:\GitHub\TestDev-QWA\TestDev-QWA\bin\Debug\netcoreapp3.1\TestDev-QWA.pdb
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev-QWA.csproj.AssemblyReference.cache
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev_QWA.Form1.resources
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev-QWA.csproj.GenerateResource.cache
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev-QWA.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev-QWA.AssemblyInfoInputs.cache
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev-QWA.AssemblyInfo.cs
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev-QWA.csproj.CoreCompileInputs.cache
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev-QWA.dll
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev-QWA.pdb
+E:\GitHub\TestDev-QWA\TestDev-QWA\obj\Debug\netcoreapp3.1\TestDev-QWA.genruntimeconfig.cache
