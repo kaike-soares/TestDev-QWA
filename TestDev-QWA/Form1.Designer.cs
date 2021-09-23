@@ -39,16 +39,15 @@ namespace TestDev_QWA
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.txtNascimento = new System.Windows.Forms.DateTimePicker();
             this.txtContagem = new System.Windows.Forms.TextBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 37);
+            this.label1.Location = new System.Drawing.Point(109, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 0;
@@ -57,7 +56,7 @@ namespace TestDev_QWA
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 37);
+            this.label2.Location = new System.Drawing.Point(290, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 1;
@@ -67,7 +66,7 @@ namespace TestDev_QWA
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(410, 37);
+            this.label3.Location = new System.Drawing.Point(499, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 20);
             this.label3.TabIndex = 2;
@@ -76,7 +75,7 @@ namespace TestDev_QWA
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(100, 105);
+            this.label4.Location = new System.Drawing.Point(586, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 20);
             this.label4.TabIndex = 3;
@@ -84,21 +83,21 @@ namespace TestDev_QWA
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(47, 60);
+            this.txtNome.Location = new System.Drawing.Point(16, 60);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(156, 27);
+            this.txtNome.Size = new System.Drawing.Size(216, 27);
             this.txtNome.TabIndex = 0;
             // 
             // txtSobrenome
             // 
-            this.txtSobrenome.Location = new System.Drawing.Point(209, 60);
+            this.txtSobrenome.Location = new System.Drawing.Point(238, 60);
             this.txtSobrenome.Name = "txtSobrenome";
-            this.txtSobrenome.Size = new System.Drawing.Size(152, 27);
+            this.txtSobrenome.Size = new System.Drawing.Size(216, 27);
             this.txtSobrenome.TabIndex = 1;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(325, 125);
+            this.btnCadastrar.Location = new System.Drawing.Point(402, 106);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(94, 29);
             this.btnCadastrar.TabIndex = 4;
@@ -108,7 +107,7 @@ namespace TestDev_QWA
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(368, 60);
+            this.txtCPF.Location = new System.Drawing.Point(457, 60);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(127, 27);
@@ -118,7 +117,7 @@ namespace TestDev_QWA
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(546, 174);
+            this.label6.Location = new System.Drawing.Point(549, 522);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(165, 20);
             this.label6.TabIndex = 14;
@@ -131,57 +130,46 @@ namespace TestDev_QWA
             this.listBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox.FormattingEnabled = true;
             this.listBox.ItemHeight = 25;
-            this.listBox.Location = new System.Drawing.Point(16, 201);
+            this.listBox.Location = new System.Drawing.Point(16, 169);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(729, 325);
+            this.listBox.Size = new System.Drawing.Size(729, 350);
             this.listBox.TabIndex = 16;
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Location = new System.Drawing.Point(440, 125);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(94, 29);
-            this.btnLimpar.TabIndex = 17;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(590, 94);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(94, 29);
-            this.btnExcluir.TabIndex = 18;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // txtNascimento
             // 
             this.txtNascimento.CustomFormat = "";
             this.txtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtNascimento.Location = new System.Drawing.Point(109, 127);
+            this.txtNascimento.Location = new System.Drawing.Point(590, 60);
             this.txtNascimento.Name = "txtNascimento";
-            this.txtNascimento.Size = new System.Drawing.Size(129, 27);
+            this.txtNascimento.Size = new System.Drawing.Size(152, 27);
             this.txtNascimento.TabIndex = 3;
             // 
             // txtContagem
             // 
             this.txtContagem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContagem.Enabled = false;
-            this.txtContagem.Location = new System.Drawing.Point(714, 175);
+            this.txtContagem.Location = new System.Drawing.Point(717, 523);
             this.txtContagem.Name = "txtContagem";
             this.txtContagem.Size = new System.Drawing.Size(28, 20);
             this.txtContagem.TabIndex = 19;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(290, 106);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(94, 29);
+            this.btnSalvar.TabIndex = 20;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 547);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtContagem);
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.txtNascimento);
             this.Controls.Add(this.label6);
@@ -214,10 +202,9 @@ namespace TestDev_QWA
         private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox listBox;
-        private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.DateTimePicker txtNascimento;
         private System.Windows.Forms.TextBox txtContagem;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }
 

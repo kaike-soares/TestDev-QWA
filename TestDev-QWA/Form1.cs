@@ -15,6 +15,9 @@ namespace TestDev_QWA
         List<Pessoa> pessoas;
         int resultIdade;
         int contagem = 0;
+        string maiorIdade;
+        int vagas = 5;
+        int cand = 0;
 
         public Form1()
         {
@@ -33,120 +36,121 @@ namespace TestDev_QWA
 
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
-            if (contagem <= 9)
-            {
-                
-
-                //Descobrir idade do cadastrado
-                if (txtNascimento.Value < DateTime.Now)
+            cand++;
+            vagas--;
+                if (cand <= 3)
                 {
-                    resultIdade = CalculaIdade(txtNascimento.Value);
-                }
-                else
-                {
-                    MessageBox.Show("Data inválida");
-                }
-
-                //Verifica se o CPF já existe na lista
-                foreach (Pessoa pessoa in pessoas)
-                {
-
-                    if (pessoa.CPF == txtCPF.Text)
+                    //Descobrir idade do cadastrado
+                    if (txtNascimento.Value < DateTime.Now)
                     {
-                        MessageBox.Show("CPF já cadastrado.");
-                        txtCPF.Clear();
+                        resultIdade = CalculaIdade(txtNascimento.Value);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data inválida");
+                    }
+
+                    //Verifica se o CPF já existe na lista
+                    foreach (Pessoa pessoa in pessoas)
+                    {
+
+                        if (pessoa.CPF == txtCPF.Text)
+                        {
+                            MessageBox.Show("CPF já cadastrado.");
+                            txtCPF.Clear();
+                            txtCPF.Focus();
+                            return;
+                        }
+                    }
+
+                    //Verifica se o nome foi preenchido
+                    if (txtNome.Text == "")
+                    {
+                        MessageBox.Show("O campo Nome é obrigatório.\nA Pessoa não foi adicionado à lista");
+                        txtNome.Focus();
+                        return;
+                    }
+                    //Verifica se o sobrenome foi preenchido
+                    if (txtSobrenome.Text == "")
+                    {
+                        MessageBox.Show("O campo Sobrenome é obrigatório.\nA Pessoa não foi adicionado à lista");
+                        txtSobrenome.Focus();
+                        return;
+                    }
+                    //Verifica se o CPF foi preenchido
+                    if (txtCPF.Text == "")
+                    {
+                        MessageBox.Show("O campo CPF é obrigatório.\nA Pessoa não foi adicionado à lista");
                         txtCPF.Focus();
                         return;
                     }
-                }
+                    //Verifica se a data de nascimento foi preenchido
+                    if (txtNascimento.Text == "")
+                    {
+                        MessageBox.Show("O campo Data de Nascimento é obrigatório.\nA Pessoa não foi adicionado à lista");
+                        txtNascimento.Focus();
+                        return;
+                    }
 
-                //Verifica se o nome foi preenchido
-                if (txtNome.Text == "")
-                {
-                    MessageBox.Show("O campo Nome é obrigatório.\nA Pessoa não foi adicionado à lista");
-                    txtNome.Focus();
-                    return;
-                }
-                //Verifica se o sobrenome foi preenchido
-                if (txtSobrenome.Text == "")
-                {
-                    MessageBox.Show("O campo Sobrenome é obrigatório.\nA Pessoa não foi adicionado à lista");
-                    txtSobrenome.Focus();
-                    return;
-                }
-                //Verifica se o CPF foi preenchido
-                if (txtCPF.Text == "")
-                {
-                    MessageBox.Show("O campo CPF é obrigatório.\nA Pessoa não foi adicionado à lista");
-                    txtCPF.Focus();
-                    return;
-                }
-                //Verifica se a data de nascimento foi preenchido
-                if (txtNascimento.Text == "")
-                {
-                    MessageBox.Show("O campo Data de Nascimento é obrigatório.\nA Pessoa não foi adicionado à lista");
-                    txtNascimento.Focus();
-                    return;
-                }
+                    //É maior de idade?
+                    if (resultIdade >= 18)
+                    {
+                        maiorIdade = "É maior de idade";
+                    }
+                    else
+                    {
+                        maiorIdade = "Não é maior de idade";
+                    }
 
-                //É maior de idade?
-                string maiorIdade;
-                if (resultIdade >= 18)
-                {
-                    maiorIdade = "É maior de idade";
+                    Pessoa p = new Pessoa();
+                    p.Nome = txtNome.Text;
+                    p.Sobrenome = txtSobrenome.Text;
+                    p.CPF = txtCPF.Text;
+                    p.DataNascimento = txtNascimento.Text;
+                    p.Idade = $"{resultIdade} Anos";
+                    p.maiorIdade = maiorIdade;
+
+                    int index = -1;
+
+                    if (index < 0)
+                    {
+                        pessoas.Add(p);
+
+                    }
+                    else
+                    {
+                        pessoas[index] = p;
+                    }
+
+                    txtNome.Clear();
+                    txtSobrenome.Clear();
+                    txtCPF.Clear();
+
+                    //Cadastros já realizados
+                    contagem++;
+                    txtContagem.Text = contagem.ToString();
                 }
                 else
                 {
-                    maiorIdade = "Não é maior de idade";
+                    MessageBox.Show("Nº de candidatos já atingiu o limite permitido");
                 }
+            
 
-                Pessoa p = new Pessoa();
-                p.Nome = txtNome.Text;
-                p.Sobrenome = txtSobrenome.Text;
-                p.CPF = txtCPF.Text;
-                p.DataNascimento = txtNascimento.Text;
-                p.Idade = $"{resultIdade} Anos";
-                p.maiorIdade = maiorIdade;
+        }
 
-                int index = -1;
-
-                if (index < 0)
-                {
-                    pessoas.Add(p);
-
-                }
-                else
-                {
-                    pessoas[index] = p;
-                }
-
-                //Cadastros já realizados
-                contagem++;
-                txtContagem.Text = contagem.ToString();
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            if (contagem < 9)
+            {
+                MessageBox.Show("Candidatos cadastrados com sucesso");
+                listar();
             }
             else
             {
                 MessageBox.Show("Não é possivel cadastrar mais pessoas");
             }
-
-            txtNome.Clear();
-            txtSobrenome.Clear();
-            txtCPF.Clear();
-  
-            btnLimpar_Click(btnLimpar, EventArgs.Empty);
-            listar();
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -173,5 +177,7 @@ namespace TestDev_QWA
                     +p.maiorIdade);
             }
         }
+
+        
     }
 }
