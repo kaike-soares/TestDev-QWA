@@ -11,6 +11,7 @@ namespace TestDev_QWA
         public string DataNascimento { get; set; }
         public string CPF { get; set; }
         public string Idade { get; set; }
+        public string maiorIdade { get; set; }
 
     }
 }

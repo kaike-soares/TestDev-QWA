@@ -36,16 +36,13 @@ namespace TestDev_QWA
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtSobrenome = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.rdbSIM = new System.Windows.Forms.RadioButton();
-            this.rdbNAO = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.txtIdade = new System.Windows.Forms.TextBox();
             this.txtNascimento = new System.Windows.Forms.DateTimePicker();
+            this.txtContagem = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -101,46 +98,13 @@ namespace TestDev_QWA
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(590, 58);
+            this.btnCadastrar.Location = new System.Drawing.Point(325, 125);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(94, 29);
             this.btnCadastrar.TabIndex = 4;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // rdbSIM
-            // 
-            this.rdbSIM.AutoSize = true;
-            this.rdbSIM.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbSIM.Location = new System.Drawing.Point(421, 133);
-            this.rdbSIM.Name = "rdbSIM";
-            this.rdbSIM.Size = new System.Drawing.Size(48, 19);
-            this.rdbSIM.TabIndex = 9;
-            this.rdbSIM.Text = "Sim";
-            this.rdbSIM.UseVisualStyleBackColor = true;
-            // 
-            // rdbNAO
-            // 
-            this.rdbNAO.AutoSize = true;
-            this.rdbNAO.Checked = true;
-            this.rdbNAO.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbNAO.Location = new System.Drawing.Point(475, 133);
-            this.rdbNAO.Name = "rdbNAO";
-            this.rdbNAO.Size = new System.Drawing.Size(50, 19);
-            this.rdbNAO.TabIndex = 10;
-            this.rdbNAO.TabStop = true;
-            this.rdbNAO.Text = "Não";
-            this.rdbNAO.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(410, 103);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 20);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "É maior de idade?";
             // 
             // txtCPF
             // 
@@ -154,7 +118,7 @@ namespace TestDev_QWA
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(540, 178);
+            this.label6.Location = new System.Drawing.Point(546, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(165, 20);
             this.label6.TabIndex = 14;
@@ -174,7 +138,7 @@ namespace TestDev_QWA
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(590, 127);
+            this.btnLimpar.Location = new System.Drawing.Point(440, 125);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(94, 29);
             this.btnLimpar.TabIndex = 17;
@@ -192,39 +156,36 @@ namespace TestDev_QWA
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // txtIdade
-            // 
-            this.txtIdade.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdade.Enabled = false;
-            this.txtIdade.Location = new System.Drawing.Point(268, 127);
-            this.txtIdade.Name = "txtIdade";
-            this.txtIdade.Size = new System.Drawing.Size(105, 20);
-            this.txtIdade.TabIndex = 19;
-            this.txtIdade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txtNascimento
             // 
+            this.txtNascimento.CustomFormat = "";
             this.txtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtNascimento.Location = new System.Drawing.Point(109, 127);
             this.txtNascimento.Name = "txtNascimento";
             this.txtNascimento.Size = new System.Drawing.Size(129, 27);
             this.txtNascimento.TabIndex = 3;
             // 
+            // txtContagem
+            // 
+            this.txtContagem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContagem.Enabled = false;
+            this.txtContagem.Location = new System.Drawing.Point(714, 175);
+            this.txtContagem.Name = "txtContagem";
+            this.txtContagem.Size = new System.Drawing.Size(28, 20);
+            this.txtContagem.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 547);
-            this.Controls.Add(this.txtIdade);
+            this.Controls.Add(this.txtContagem);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.txtNascimento);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtCPF);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.rdbNAO);
-            this.Controls.Add(this.rdbSIM);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txtSobrenome);
             this.Controls.Add(this.txtNome);
@@ -250,16 +211,13 @@ namespace TestDev_QWA
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtSobrenome;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.RadioButton rdbSIM;
-        private System.Windows.Forms.RadioButton rdbNAO;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.TextBox txtIdade;
         private System.Windows.Forms.DateTimePicker txtNascimento;
+        private System.Windows.Forms.TextBox txtContagem;
     }
 }
 
