@@ -1,6 +1,6 @@
-**Nome:** Kaike Soares | [Contato Whatsapp](href="https://api.whatsapp.com/send?phone=5511971002004">)
+**Nome:** Kaike Soares | [Whatsapp](https://api.whatsapp.com/send?phone=5511971002004>)
 
-**Teste DEV:** QWA Soluções em TI
+## Teste DEV: QWA Soluções em TI
 
 
 
@@ -29,7 +29,7 @@ Não pode cadastrar mais de 10 pessoas.
 Idade
 - É maior de idade?
 
-**Descrição do problema**
+## Descrição do problema
 
 A empresa XPTO precisa fazer um sistema de cadastro de candidatos para seu programa de Trainee. O cadastro será feito em 2 momentos, mas na mesma tela.
 
