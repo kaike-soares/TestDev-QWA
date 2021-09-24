@@ -97,7 +97,7 @@ namespace TestDev_QWA
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(640, 134);
+            this.btnCadastrar.Location = new System.Drawing.Point(640, 128);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(94, 29);
             this.btnCadastrar.TabIndex = 4;
@@ -155,7 +155,7 @@ namespace TestDev_QWA
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(640, 99);
+            this.btnSalvar.Location = new System.Drawing.Point(640, 93);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(94, 29);
             this.btnSalvar.TabIndex = 20;

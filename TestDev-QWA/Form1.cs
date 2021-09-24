@@ -101,58 +101,84 @@ namespace TestDev_QWA
             }
 
             //Número de vagas
-           
+            if(vagas <= 5)
             {
-                cand++;
-
-                Pessoa p = new Pessoa();
-                p.Nome = txtNome.Text;
-                p.Sobrenome = txtSobrenome.Text;
-                p.CPF = txtCPF.Text;
-                p.DataNascimento = txtNascimento.Text;
-                p.Idade = $"{resultIdade} Anos";
-                p.maiorIdade = maiorIdade;
-
-                int index = -1;
-                if (index < 0)
+                if (cand <= 3)
                 {
-                    pessoas.Add(p);
+                    if (contagem > 10)
+                    {
+                        MessageBox.Show("Não é possivel cadastrar mais candidatos");
+
+                    }
+
+                    cand++;
+               
+                    Pessoa p = new Pessoa();
+                    p.Nome = txtNome.Text;
+                    p.Sobrenome = txtSobrenome.Text;
+                    p.CPF = txtCPF.Text;
+                    p.DataNascimento = txtNascimento.Text;
+                    p.Idade = $"{resultIdade} Anos";
+                    p.maiorIdade = maiorIdade;
+
+                    int index = -1;
+                    if (index < 0)
+                    {
+                        pessoas.Add(p);
+                    }
+                    else
+                    {
+                        pessoas[index] = p;
+                    }
+
+                    //Cadastros já realizados
+                    contagem++;
+                    txtContagem.Text = contagem.ToString();
+                    txtNome.Focus();
+
+                    
+
                 }
                 else
                 {
-                    pessoas[index] = p;
+                    MessageBox.Show("\nCandidato não cadastrado.\nNº de candidatos atingiu o limite permitido por vaga.\nClique em cadastrar para gravar os candidatos");
+                    cand = 0;
                 }
 
-                //Cadastros já realizados
-                contagem++;
-                txtContagem.Text = contagem.ToString();
-                txtNome.Focus();
-
+                txtNome.Clear();
+                txtSobrenome.Clear();
+                txtCPF.Clear();
+                txtNascimento.Value = DateTime.Now;
             }
             else
             {
-                MessageBox.Show("\nCandidato não cadastrado.\nNº de candidatos atingiu o limite permitido por vaga.\nClique em cadastrar para gravar os candidatos");
-                cand = 0;
+                MessageBox.Show("Não há mais vagas");
+                txtNome.Clear();
+                txtSobrenome.Clear();
+                txtCPF.Clear();
+                txtNascimento.Value = DateTime.Now;
             }
             
-            txtNome.Clear();
-            txtSobrenome.Clear();
-            txtCPF.Clear();
-            txtNascimento.Value = DateTime.Now;
 
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (contagem <= 9)
+            if (contagem < 9)
             {
                 MessageBox.Show("Candidatos cadastrados com sucesso");
+                cand = 1;
+                vagas++;
             }
             else
             {
                 MessageBox.Show("Não é possivel cadastrar mais candidatos");
             }
             listar();
+            txtNome.Clear();
+            txtSobrenome.Clear();
+            txtCPF.Clear();
+            txtNascimento.Value = DateTime.Now;
 
 
         }
@@ -172,7 +198,8 @@ namespace TestDev_QWA
   
             foreach (Pessoa p in pessoas)
             {
-                listBox.Items.Add(p.Nome + " "
+                listBox.Items.Add(
+                     p.Nome + " "
                     +p.Sobrenome + " - " 
                     +p.CPF + " - "
                     +p.DataNascimento + " - "
@@ -181,6 +208,5 @@ namespace TestDev_QWA
             }
         }
 
-        
     }
 }
