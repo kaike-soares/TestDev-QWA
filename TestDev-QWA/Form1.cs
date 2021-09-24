@@ -16,8 +16,8 @@ namespace TestDev_QWA
         int resultIdade;
         int contagem = 0;
         string maiorIdade;
-        int vagas = 5;
-        int cand = 0;
+        int vagas = 1;
+        int cand = 1;
 
         public Form1()
         {
@@ -38,8 +38,6 @@ namespace TestDev_QWA
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
-
             //Verifica se o nome foi preenchido
             if (txtNome.Text == "")
             {
@@ -102,15 +100,11 @@ namespace TestDev_QWA
                 maiorIdade = "Não é maior de idade";
             }
 
-            //Cadastros já realizados
-            contagem++;
-            txtContagem.Text = contagem.ToString();
-
-            cand++;
-            vagas--;
             //Número de vagas
-            if (cand <= 3)
-                {
+           
+            {
+                cand++;
+
                 Pessoa p = new Pessoa();
                 p.Nome = txtNome.Text;
                 p.Sobrenome = txtSobrenome.Text;
@@ -120,7 +114,6 @@ namespace TestDev_QWA
                 p.maiorIdade = maiorIdade;
 
                 int index = -1;
-
                 if (index < 0)
                 {
                     pessoas.Add(p);
@@ -130,30 +123,37 @@ namespace TestDev_QWA
                     pessoas[index] = p;
                 }
 
-                txtNome.Clear();
-                txtSobrenome.Clear();
-                txtCPF.Clear();
-                txtNascimento.Value = DateTime.Now;
+                //Cadastros já realizados
+                contagem++;
+                txtContagem.Text = contagem.ToString();
+                txtNome.Focus();
+
             }
-                else
-                {
-                    MessageBox.Show("Nº de candidatos já atingiu o limite permitido");
-                }
+            else
+            {
+                MessageBox.Show("\nCandidato não cadastrado.\nNº de candidatos atingiu o limite permitido por vaga.\nClique em cadastrar para gravar os candidatos");
+                cand = 0;
+            }
             
+            txtNome.Clear();
+            txtSobrenome.Clear();
+            txtCPF.Clear();
+            txtNascimento.Value = DateTime.Now;
 
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (contagem < 9)
+            if (contagem <= 9)
             {
                 MessageBox.Show("Candidatos cadastrados com sucesso");
-                listar();
             }
             else
             {
                 MessageBox.Show("Não é possivel cadastrar mais candidatos");
             }
+            listar();
+
 
         }
 
